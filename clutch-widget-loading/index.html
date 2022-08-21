@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clutch widget loading demo</title>
+
+    <style>
+        .scroll-keeper {height: 1000px}
+        .clutch-widget {height: 375px}
+        fscript {display: none;}
+    </style>
+
+    <!-- fscript: https://github.com/biggerpicturestudio/delaying-3rd-parties -->
+    <script>
+        var scriptsExecuted = false;
+        var head = document.getElementsByTagName('head')[0] || document.documentElement;
+        
+        function executeScripts() {
+            var fscripts = document.querySelectorAll('fscript');
+            [].forEach.call(fscripts, function(fscript) {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+        
+                if (fscript.hasAttributes()) {
+                    for (var attributeKey in fscript.attributes) {
+                        if (fscript.attributes.hasOwnProperty(attributeKey)) {
+                            script[ fscript.attributes[ attributeKey ].name ] = fscript.attributes[ attributeKey ].value || true;
+                        }
+                    }
+                } else {
+                    script.appendChild( document.createTextNode( fscript.innerHTML ) );
+                }
+        
+                head.insertBefore( script, head.firstChild );
+            });
+        }
+        
+        function initScripts() {
+            if (scriptsExecuted) {
+                return;
+            }
+        
+            scriptsExecuted = true;
+        
+            setTimeout(function() {
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(executeScripts, { timeout: 1000 });
+                } else {
+                    executeScripts();
+                }
+            }, 1000);
+        }
+        
+        window.addEventListener('scroll', function() {
+            initScripts();
+        }, false);
+        
+        document.onclick = function() {
+            initScripts();
+        };
+    </script>
+    <!-- // end -->
+</head>
+<body>
+    <!-- just to make the page tall -->
+    <div class="scroll-keeper"></div>
+
+    <div 
+        class="clutch-widget" 
+        data-nofollow="true" 
+        data-url="https://widget.clutch.co" 
+        data-widget-type="12" 
+        data-height="375" 
+        data-clutchcompany-id="175573">
+    </div>
+
+    <fscript>
+        function async(u, c) {
+            var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    
+        async('https://widget.clutch.co/static/js/widget.js', function() {
+            CLUTCHCO.Init();
+        });
+    </fscript>
+</body>
+</html>
