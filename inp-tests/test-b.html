@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INP test B</title>
+    <style>
+        .box {
+            position: relative;
+            width: 500px;
+            background-color: #ededed;
+            padding: 2em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* create modifier of .box class to show overlay and loading text */
+        .box--loading::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            content: '';
+
+            text-align: center;
+            color: #fff;
+        }
+
+        .box--loading::after {
+            content: 'Loading...';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+
+
+        .box a {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="https://www.webdevinsider.pl">Click me</a>
+    </div>
+
+    <script>
+        // taken from https://gist.github.com/sqren/5083d73f184acae0c5b7
+        function mySlowFunction(baseNumber) {
+            console.time('mySlowFunction');
+            let result = 0;	
+            for (var i = Math.pow(baseNumber, 7); i >= 0; i--) {		
+                result += Math.atan(i) * Math.tan(i);
+            };
+            console.timeEnd('mySlowFunction');
+        }
+
+        const boxElement = document.querySelector('.box');
+
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                boxElement.classList.add('box--loading');
+
+                setTimeout(() => {
+                    const href = link.getAttribute('href');
+                    mySlowFunction(10);
+
+                    console.log(123);
+                    boxElement.classList.remove('box--loading');
+                }, 0);
+            });
+        });
+    </script>
+
+    <script type="module">
+        import { onINP } from 'https://unpkg.com/web-vitals@3?module';
+        onINP(console.log);
+    </script>
+</body>
+</html>
