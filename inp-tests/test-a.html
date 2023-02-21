@@ -19,11 +19,20 @@
         .box a {
             color: #666;
         }
+
+        .box small {
+            color: #d70000;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="box">
         <a href="https://www.webdevinsider.pl">Click me</a>
+
+        <p>
+            <small>PS Trwa nabór do mojego kursu <a target="_blank" rel="noopener noreferrer" href="https://www.webdevinsider.pl/zoptymalizowany-frontend">Zoptymalizowany Frontend</a> (tylko do czwartku 23. lutego!).</small>
+        </p>
     </div>
 
     <script>
@@ -37,7 +46,7 @@
             console.timeEnd('mySlowFunction');
         }
 
-        document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('.box > a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
 

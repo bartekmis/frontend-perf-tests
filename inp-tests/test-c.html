@@ -37,26 +37,18 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #fff;
         }
         
+
+
         .box a {
             color: #666;
-        }
-
-        .box small {
-            color: #d70000;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="box">
         <a href="https://www.webdevinsider.pl">Click me</a>
-
-        <p>
-            <small>PS Trwa nabór do mojego kursu <a target="_blank" rel="noopener noreferrer" href="https://www.webdevinsider.pl/zoptymalizowany-frontend">Zoptymalizowany Frontend</a> (tylko do czwartku 23. lutego!).</small>
-        </p>
     </div>
 
     <script>
@@ -72,7 +64,7 @@
 
         const boxElement = document.querySelector('.box');
 
-        document.querySelectorAll('.box > a').forEach(link => {
+        document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
                 boxElement.classList.add('box--loading');
