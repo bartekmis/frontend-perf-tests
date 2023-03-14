@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS background-image lazy loading</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 2000px;
+        }
+
+        .page-section {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+
+    <script> (function (w, d) { w.addEventListener('LazyLoad::Initialized', function (e) { w.lazyLoadInstance = e.detail.instance; }, false); var b = d.getElementsByTagName('head')[0]; var s = d.createElement("script"); s.async = true; var v = !("IntersectionObserver" in w) ? "lazyloadPolyfill.js" : "lazyloadIntersectionObserver.js"; s.src = "./js/" + v; w.lazyLoadOptions = { elements_selector: ".lazy", threshold: 100, callback_enter: function(element) { var css = element.getAttribute('data-style'); if (css) { css = css.replace(/(\r\n|\n|\r)/gm, ""); var style = document.createElement('style'); var head = document.getElementsByTagName('head')[0]; head.appendChild(style); style.setAttribute("type", "text/css"); if (style.styleSheet) { style.styleSheet.cssText = css; } else { var styleText = document.createTextNode(css); style.appendChild(styleText); } setTimeout(function() { element.classList.add('lazy--loaded'); }, 300); } } }; b.appendChild(s); }(window, document)); </script>
+</head>
+<body>
+    <h1>CSS responsive background-image lazy loading (scroll down)</h1>
+    <p>
+        You need to copy the &lt;script&gt; from the &lt;head&gt; section and two JS files (lazyloadPolyfill.js + lazyloadIntersectionObserver.js). Then, in a layer where you want to lazy load a background image you have to add <b>lazy</b> class and <b>data-style</b> attribute that should contain CSS code that will be executed when scrolling down to this layer. Go to source code of this page that is self-explanatory.
+    </p>
+    
+    <div class="placeholder"></div>
+
+
+    <div 
+        class="page-section lazy"
+        id="section-global-map"
+        data-style="
+            #section-global-map {
+                background:
+                    url('https://ik.imagekit.io/pmo6tipgtxn/assets/images/homework/map-dotted.png') center center no-repeat,
+                    url('https://ik.imagekit.io/pmo6tipgtxn/assets/images/homework/bg-sec-grad-lime.svg') top center no-repeat;
+                background-size: auto auto, cover;
+                background-attachment: fixed, scroll;
+            }
+        ">
+        <p>Hello world</p>
+    </div>
+</body>
+</html>
