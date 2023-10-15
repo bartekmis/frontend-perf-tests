@@ -7,14 +7,14 @@
     <title>Test 1</title>
 
     <script>
-        console.log('this text comes up immediately.');
+        console.log('Script before CSS');
     </script>
 
     <!-- artificially delayed CSS (5 sec.) -->
     <link rel="stylesheet" href="https://www.webdevinsider.pl/delayed-assets/stylesheet.php">
 
     <script>
-        console.log('this text comes up only after CSS is loaded.');
+        console.log('Script after CSS');
     </script>
 </head>
 <body>

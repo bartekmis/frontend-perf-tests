@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INP test A</title>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         .box {
             width: 200px;
             background-color: #ededed;
@@ -17,7 +21,12 @@
         }
 
         .box a {
-            color: #666;
+            color: #fff;
+            background-color: #d70000;
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            text-align: center;
         }
 
         .box small {
@@ -29,10 +38,6 @@
 <body>
     <div class="box">
         <a href="https://www.webdevinsider.pl">Click me</a>
-
-        <p>
-            <small>PS W dniach 17-20. kwietnia 2023 można będzie zakupić mój kurs <a target="_blank" rel="noopener noreferrer" href="https://www.webdevinsider.pl/zoptymalizowany-frontend">Zoptymalizowany Frontend</a>.</small>
-        </p>
     </div>
 
     <script>
@@ -52,8 +57,6 @@
 
                 const href = link.getAttribute('href');
                 mySlowFunction(10);
-
-                console.log(123);
             });
         });
     </script>
@@ -62,5 +65,9 @@
         import { onINP } from 'https://unpkg.com/web-vitals@3?module';
         onINP(console.log);
     </script>
+
+
+
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glightbox and INP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+</head>
+<body>
+    <p>
+        <a href="./images/photo.jpeg" class="glightbox">
+            <img src="./images/photo.jpeg" width="300" height="200" alt="Gold">
+        </a>
+    </p>
+
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js';
+
+        const lightbox = GLightbox({
+            autoplayVideos: true
+        });
+    </script>
+</body>
+</html>
