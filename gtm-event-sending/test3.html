@@ -39,10 +39,12 @@
         const btn = document.querySelector('.btn');
 
         btn.addEventListener('click', () => {
-            dataLayer.push({
-                event: 'call',
-                phone: '048999999999'
-            });
+            setTimeout(() => {
+                dataLayer.push({
+                    event: 'call',
+                    phone: '048999999999'
+                });
+            }, 0);
         });
     </script>
 </body>
