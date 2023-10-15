@@ -34,5 +34,16 @@
     <a class="btn" href="tel:048999999999">
         Call us: 048 999 99 99
     </a>
+
+    <script>
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', () => {
+            dataLayer.push({
+                event: 'call',
+                phone: '048999999999'
+            });
+        });
+    </script>
 </body>
 </html>
