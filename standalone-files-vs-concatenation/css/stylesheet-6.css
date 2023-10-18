@@ -1,0 +1,70 @@
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Disabled Button Style */
+.button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.primary-button {
+  background-color: #3498db;
+}
+
+.primary-button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: #e74c3c;
+}
+
+.secondary-button:hover {
+  background-color: #c0392b;
+}
+
+/* Success Button */
+.success-button {
+  background-color: #2ecc71;
+}
+
+.success-button:hover {
+  background-color: #27ae60;
+}
+
+/* Warning Button */
+.warning-button {
+  background-color: #f39c12;
+}
+
+.warning-button:hover {
+  background-color: #d68910;
+}
+
+/* Info Button */
+.info-button {
+  background-color: #3498db;
+}
+
+.info-button:hover {
+  background-color: #1d6fa5;
+}

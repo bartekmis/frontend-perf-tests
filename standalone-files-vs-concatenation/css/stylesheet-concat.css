@@ -1,0 +1,410 @@
+body {
+  background: linear-gradient(135deg, #FFC700, #FF0070);
+  font-family: 'Oswald', sans-serif;
+  color: #2B3A42;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFDC84;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #e74c3c;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sidebar Container */
+.sidebar {
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333; /* Background color */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  padding-top: 20px; /* Top padding to avoid overlapping with the content */
+}
+
+/* Sidebar Links */
+.sidebar a {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff; /* Text color */
+  display: block; /* Display links as block elements to fill the container */
+  transition: 0.3s; /* Add transition for smoother hover effect */
+}
+
+/* Sidebar Links on Hover */
+.sidebar a:hover {
+  background-color: #555; /* Background color on hover */
+  color: #ff6600; /* Text color on hover */
+}
+
+/* Main Content */
+.content {
+  margin-left: 250px; /* Adjust this value to match the width of the sidebar */
+  padding: 20px;
+}
+
+/* Toggle Button (for responsive design) */
+.toggle-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff; /* Icon color */
+}
+
+/* Error Message (Optional) */
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Success Message (Optional) */
+.success-message {
+  color: #2ecc71;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Form Container */
+.form-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Elements */
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+/* Form Button */
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Button Style */
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Disabled Button Style */
+.button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.primary-button {
+  background-color: #3498db;
+}
+
+.primary-button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: #e74c3c;
+}
+
+.secondary-button:hover {
+  background-color: #c0392b;
+}
+
+/* Success Button */
+.success-button {
+  background-color: #2ecc71;
+}
+
+.success-button:hover {
+  background-color: #27ae60;
+}
+
+/* Warning Button */
+.warning-button {
+  background-color: #f39c12;
+}
+
+.warning-button:hover {
+  background-color: #d68910;
+}
+
+/* Info Button */
+.info-button {
+  background-color: #3498db;
+}
+
+.info-button:hover {
+  background-color: #1d6fa5;
+}
+
+/* Footer Container */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Footer Links */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Copyright Text */
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Social Media Icons (Optional) */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #3498db;
+}
+
+/* H1 Style */
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* H2 Style */
+h2 {
+  font-size: 30px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* H3 Style */
+h3 {
+  font-size: 24px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+/* H4 Style */
+h4 {
+  font-size: 20px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* H5 Style */
+h5 {
+  font-size: 18px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+/* H6 Style */
+h6 {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 5px;
+}
+
+/* Underline on Hover (Optional) */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+  text-decoration: underline;
+}
+
+/* Comment Section Container */
+.comment-section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Individual Comment */
+.comment {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Comment Author Name */
+.comment .author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Comment Text */
+.comment .text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Comment Timestamp (Optional) */
+.comment .timestamp {
+  color: #888;
+  font-size: 12px;
+}
+
+/* Comment Actions (Reply, Like, Report, etc.) */
+.comment .actions {
+  margin-top: 10px;
+}
+
+.comment .actions a {
+  text-decoration: none;
+  color: #3498db;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.comment .actions a:hover {
+  text-decoration: underline;
+}
+
+/* Paragraph Style */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Text Alignment Styles */
+.left-aligned {
+  text-align: left;
+}
+
+.center-aligned {
+  text-align: center;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+/* Text Color Variations */
+.primary-text {
+  color: #333;
+}
+
+.secondary-text {
+  color: #777;
+}
+
+/* Text Emphasis Styles */
+.italic-text {
+  font-style: italic;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+/* Highlighted Text */
+.highlighted-text {
+  background-color: #FFFF99;
+}
+
+/* Text Underline (Optional) */
+.underlined-text {
+  text-decoration: underline;
+}

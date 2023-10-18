@@ -1,0 +1,49 @@
+/* Comment Section Container */
+.comment-section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Individual Comment */
+.comment {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Comment Author Name */
+.comment .author {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Comment Text */
+.comment .text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Comment Timestamp (Optional) */
+.comment .timestamp {
+  color: #888;
+  font-size: 12px;
+}
+
+/* Comment Actions (Reply, Like, Report, etc.) */
+.comment .actions {
+  margin-top: 10px;
+}
+
+.comment .actions a {
+  text-decoration: none;
+  color: #3498db;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.comment .actions a:hover {
+  text-decoration: underline;
+}

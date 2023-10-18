@@ -1,0 +1,13 @@
+/* Error Message (Optional) */
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Success Message (Optional) */
+.success-message {
+  color: #2ecc71;
+  font-size: 14px;
+  margin-top: 5px;
+}

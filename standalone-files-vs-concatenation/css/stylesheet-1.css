@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(135deg, #FFC700, #FF0070);
+  font-family: 'Oswald', sans-serif;
+  color: #2B3A42;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFDC84;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+}

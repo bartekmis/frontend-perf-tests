@@ -1,0 +1,48 @@
+/* Paragraph Style */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Text Alignment Styles */
+.left-aligned {
+  text-align: left;
+}
+
+.center-aligned {
+  text-align: center;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+/* Text Color Variations */
+.primary-text {
+  color: #333;
+}
+
+.secondary-text {
+  color: #777;
+}
+
+/* Text Emphasis Styles */
+.italic-text {
+  font-style: italic;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+/* Highlighted Text */
+.highlighted-text {
+  background-color: #FFFF99;
+}
+
+/* Text Underline (Optional) */
+.underlined-text {
+  text-decoration: underline;
+}
