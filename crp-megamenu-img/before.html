@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Mega Menu example</title>
+
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5N8HB98J');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Navigation styles */
+        .nav-container {
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+        }
+
+        .logo {
+            color: #e60000;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 0 15px;
+            display: block;
+            line-height: 70px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #e60000;
+        }
+
+        .has-mega-menu {
+            position: static;
+            display: inline-block;
+        }
+
+        .mega-menu-trigger {
+            cursor: pointer;
+        }
+
+        .mega-menu-trigger::after {
+            content: '▼';
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        /* Mega menu styles */
+        .mega-menu {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: none;
+            padding: 30px 20px;
+            z-index: 100;
+            margin-top: 0;
+        }
+
+        .mega-menu-active {
+            display: block;
+        }
+
+        .mega-menu-content {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mega-menu-close {
+            position: absolute;
+            right: 0;
+            top: -20px;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #666;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .mega-menu-image {
+            flex: 0 0 20%;
+            padding-right: 30px;
+        }
+
+        .mega-menu-image img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .mega-menu-sections {
+            flex: 0 0 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu-section {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .menu-section ul li a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+            line-height: normal;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .promotion-tag {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #333;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .menu-section ul li a:hover {
+            color: #e60000;
+            background-color: transparent;
+        }
+        
+        .mega-menu-banner {
+            margin-top: 30px;
+            background-color: #fff8dd;
+            padding: 15px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .banner-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .banner-image {
+            margin-right: 15px;
+            width: 60px;
+        }
+        
+        .banner-text {
+            font-weight: 500;
+        }
+        
+        .banner-button {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Header styles */
+        .header {
+            height: 70vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            flex: 1 0 300px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1 0 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #555;
+            padding-bottom: 5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #555;
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 20px;
+        }
+    </style>
+
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="top-nav">
+            <a href="#" class="logo">YourBrand</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="has-mega-menu">
+                    <a href="#" class="mega-menu-trigger">Products</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <a href="#" class="mega-menu-close">✕</a>
+                            <div class="mega-menu-image">
+                                <img src="https://picsum.photos/200/300?random=1" alt="Person with headphones">
+                            </div>
+                            <div class="mega-menu-sections">
+                                <div class="menu-section">
+                                    <h3 class="section-title">Promotions</h3>
+                                    <ul>
+                                        <li><a href="#">Get $400 on start</a></li>
+                                        <li><a href="#">Get $500 monthly <span class="promotion-tag">from 05.12.24</span></a></li>
+                                        <li><a href="#">$200 for kids 7-17</a></li>
+                                        <li><a href="#">Security package</a></li>
+                                        <li><a href="#">Benefits with business account</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Personal Accounts</h3>
+                                    <ul>
+                                        <li><a href="#">Standard Account</a></li>
+                                        <li><a href="#">For children 0-12</a></li>
+                                        <li><a href="#">For teens 13-17</a></li>
+                                        <li><a href="#">For young adults 18-25</a></li>
+                                        <li><a href="#">Premium Account</a></li>
+                                        <li><a href="#">Select Account</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Business Accounts</h3>
+                                    <ul>
+                                        <li><a href="#">Online Business Account</a></li>
+                                        <li><a href="#">Small Business</a></li>
+                                        <li><a href="#">Corporate Solutions</a></li>
+                                        <li><a href="#">Nonprofit Organizations</a></li>
+                                        <li><a href="#">Compare all</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-menu-banner">
+                            <div class="banner-content">
+                                <img src="https://picsum.photos/60/60?random=3" alt="People" class="banner-image">
+                                <span class="banner-text">New! Refer an account to teenagers 13-17 and earn rewards together</span>
+                            </div>
+                            <button class="banner-button">Check it out</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega-menu">
+                    <a href="#" class="mega-menu-trigger">Services</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <a href="#" class="mega-menu-close">✕</a>
+                            <div class="mega-menu-image">
+                                <img src="https://picsum.photos/200/300?random=2" alt="Customer service">
+                            </div>
+                            <div class="mega-menu-sections">
+                                <div class="menu-section">
+                                    <h3 class="section-title">Banking Services</h3>
+                                    <ul>
+                                        <li><a href="#">Online Banking</a></li>
+                                        <li><a href="#">Mobile Banking</a></li>
+                                        <li><a href="#">ATM Locations</a></li>
+                                        <li><a href="#">Wire Transfers</a></li>
+                                        <li><a href="#">Account Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Credit Services</h3>
+                                    <ul>
+                                        <li><a href="#">Credit Cards</a></li>
+                                        <li><a href="#">Personal Loans</a></li>
+                                        <li><a href="#">Mortgage Loans</a></li>
+                                        <li><a href="#">Auto Loans</a></li>
+                                        <li><a href="#">Business Loans</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Investment Services</h3>
+                                    <ul>
+                                        <li><a href="#">Retirement Planning</a></li>
+                                        <li><a href="#">Wealth Management</a></li>
+                                        <li><a href="#">Investment Accounts</a></li>
+                                        <li><a href="#">College Savings</a></li>
+                                        <li><a href="#">Financial Advisors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-menu-banner">
+                            <div class="banner-content">
+                                <img src="https://picsum.photos/60/60?random=4" alt="Special offer" class="banner-image">
+                                <span class="banner-text">Limited time offer: No fees on new accounts opened this month!</span>
+                            </div>
+                            <button class="banner-button">Learn more</button>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Header with background image -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="section-title">Our Features</h2>
+        <div class="section-content">
+            <div class="card">
+                <h3>Feature 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+            <div class="card">
+                <h3>Feature 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+            <div class="card">
+                <h3>Feature 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>123 Main St, City</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Email: info@example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 YourBrand. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mega menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const megaMenuTriggers = document.querySelectorAll('.mega-menu-trigger');
+            const megaMenuCloseButtons = document.querySelectorAll('.mega-menu-close');
+            
+            // Open mega menu when clicking on trigger
+            megaMenuTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the parent li element
+                    const parentLi = this.parentElement;
+                    
+                    // Get the mega menu
+                    const megaMenu = parentLi.querySelector('.mega-menu');
+                    
+                    // Get navigation height to position mega menu correctly
+                    const navHeight = document.querySelector('.nav-container').offsetHeight;
+                    megaMenu.style.top = navHeight + 'px';
+                    
+                    // Toggle the mega menu
+                    megaMenu.classList.toggle('mega-menu-active');
+                    
+                    // Close other open mega menus
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        if (menu !== megaMenu && menu.classList.contains('mega-menu-active')) {
+                            menu.classList.remove('mega-menu-active');
+                        }
+                    });
+                });
+            });
+            
+            // Close mega menu when clicking on close button
+            megaMenuCloseButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const megaMenu = this.closest('.mega-menu');
+                    megaMenu.classList.remove('mega-menu-active');
+                });
+            });
+            
+            // Close mega menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.has-mega-menu')) {
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        menu.classList.remove('mega-menu-active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
