@@ -220,7 +220,7 @@ body {
 /* Header styles */
 .header {
     height: 70vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-banner.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
