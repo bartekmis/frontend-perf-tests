@@ -1,0 +1,12 @@
+<script>
+  window.onload = () => {
+    const originalDataLayerPush = dataLayer.push;
+    dataLayer.push = (...args) => {
+      requestAnimationFrame(() => {
+          setTimeout(() => {
+              originalDataLayerPush(...args);
+          }, 0);
+      })
+    };
+  };
+</script> 
