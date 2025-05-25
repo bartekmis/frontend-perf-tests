@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website with Mega Menu example</title>
 
-    <link rel="stylesheet" href="css/styles.css">
-
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,8 +13,14 @@
     })(window,document,'script','dataLayer','GTM-5N8HB98J');</script>
     <!-- End Google Tag Manager -->
 
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/menu.css" as="style">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css" media="print" onload="this.media='all'">
+
     <script
-        src="https://code.jquery.com/jquery-3.7.1.js"
+        src="js/jquery.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous">
     </script>
@@ -33,7 +37,7 @@
                         <div class="mega-menu-content">
                             <a href="#" class="mega-menu-close">✕</a>
                             <div class="mega-menu-image">
-                                <img src="images/img1.jpg" alt="Person with headphones" loading="lazy" width="200" height="200">
+                                <img src="images/img1.jpg" alt="Person with headphones"loading="lazy"  width="200" height="200">
                             </div>
                             <div class="mega-menu-sections">
                                 <div class="menu-section">
