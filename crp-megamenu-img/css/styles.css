@@ -74,6 +74,14 @@ body {
     margin-left: 5px;
 }
 
+.mega-menu {
+    content-visibility: hidden;
+}
+
+.mega-menu.rendered {
+    content-visibility: visible;
+}
+
 /* Mega menu styles */
 .mega-menu {
     position: fixed;
