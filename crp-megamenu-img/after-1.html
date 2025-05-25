@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Mega Menu example</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5N8HB98J');</script>
+    <!-- End Google Tag Manager -->
+
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="top-nav">
+            <a href="#" class="logo">Demo</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="has-mega-menu">
+                    <a href="#" class="mega-menu-trigger">Products</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <a href="#" class="mega-menu-close">✕</a>
+                            <div class="mega-menu-image">
+                                <img src="images/img1.jpg" alt="Person with headphones" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="mega-menu-sections">
+                                <div class="menu-section">
+                                    <h3 class="section-title">Promotions</h3>
+                                    <ul>
+                                        <li><a href="#">Get $400 on start</a></li>
+                                        <li><a href="#">Get $500 monthly <span class="promotion-tag">from 05.12.24</span></a></li>
+                                        <li><a href="#">$200 for kids 7-17</a></li>
+                                        <li><a href="#">Security package</a></li>
+                                        <li><a href="#">Benefits with business account</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Personal Accounts</h3>
+                                    <ul>
+                                        <li><a href="#">Standard Account</a></li>
+                                        <li><a href="#">For children 0-12</a></li>
+                                        <li><a href="#">For teens 13-17</a></li>
+                                        <li><a href="#">For young adults 18-25</a></li>
+                                        <li><a href="#">Premium Account</a></li>
+                                        <li><a href="#">Select Account</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Business Accounts</h3>
+                                    <ul>
+                                        <li><a href="#">Online Business Account</a></li>
+                                        <li><a href="#">Small Business</a></li>
+                                        <li><a href="#">Corporate Solutions</a></li>
+                                        <li><a href="#">Nonprofit Organizations</a></li>
+                                        <li><a href="#">Compare all</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-menu-banner">
+                            <div class="banner-content">
+                                <img src="images/img2.jpg" alt="People" class="banner-image" loading="lazy" width="60" height="60">
+                                <span class="banner-text">New! Refer an account to teenagers 13-17 and earn rewards together</span>
+                            </div>
+                            <button class="banner-button">Check it out</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="has-mega-menu">
+                    <a href="#" class="mega-menu-trigger">Services</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <a href="#" class="mega-menu-close">✕</a>
+                            <div class="mega-menu-image">
+                                <img src="images/img3.jpg" alt="Customer service" loading="lazy" width="200" height="200">
+                            </div>
+                            <div class="mega-menu-sections">
+                                <div class="menu-section">
+                                    <h3 class="section-title">Banking Services</h3>
+                                    <ul>
+                                        <li><a href="#">Online Banking</a></li>
+                                        <li><a href="#">Mobile Banking</a></li>
+                                        <li><a href="#">ATM Locations</a></li>
+                                        <li><a href="#">Wire Transfers</a></li>
+                                        <li><a href="#">Account Services</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Credit Services</h3>
+                                    <ul>
+                                        <li><a href="#">Credit Cards</a></li>
+                                        <li><a href="#">Personal Loans</a></li>
+                                        <li><a href="#">Mortgage Loans</a></li>
+                                        <li><a href="#">Auto Loans</a></li>
+                                        <li><a href="#">Business Loans</a></li>
+                                    </ul>
+                                </div>
+                                <div class="menu-section">
+                                    <h3 class="section-title">Investment Services</h3>
+                                    <ul>
+                                        <li><a href="#">Retirement Planning</a></li>
+                                        <li><a href="#">Wealth Management</a></li>
+                                        <li><a href="#">Investment Accounts</a></li>
+                                        <li><a href="#">College Savings</a></li>
+                                        <li><a href="#">Financial Advisors</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mega-menu-banner">
+                            <div class="banner-content">
+                                <img src="images/img4.jpg" alt="Special offer" class="banner-image" loading="lazy" width="60" height="60">
+                                <span class="banner-text">Limited time offer: No fees on new accounts opened this month!</span>
+                            </div>
+                            <button class="banner-button">Learn more</button>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Header with background image -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="section-title">Our Features</h2>
+        <div class="section-content">
+            <div class="card">
+                <h3>Feature 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+            <div class="card">
+                <h3>Feature 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+            <div class="card">
+                <h3>Feature 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus. Sed eget tortor eget magna tincidunt facilisis.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget mauris vel lorem ultricies rhoncus.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>123 Main St, City</li>
+                    <li>Phone: (123) 456-7890</li>
+                    <li>Email: info@example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 YourBrand. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mega menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const megaMenuTriggers = document.querySelectorAll('.mega-menu-trigger');
+            const megaMenuCloseButtons = document.querySelectorAll('.mega-menu-close');
+            
+            // Open mega menu when clicking on trigger
+            megaMenuTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the parent li element
+                    const parentLi = this.parentElement;
+                    
+                    // Get the mega menu
+                    const megaMenu = parentLi.querySelector('.mega-menu');
+                    
+                    // Get navigation height to position mega menu correctly
+                    const navHeight = document.querySelector('.nav-container').offsetHeight;
+                    megaMenu.style.top = navHeight + 'px';
+                    
+                    // Toggle the mega menu
+                    megaMenu.classList.toggle('mega-menu-active');
+                    
+                    // Close other open mega menus
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        if (menu !== megaMenu && menu.classList.contains('mega-menu-active')) {
+                            menu.classList.remove('mega-menu-active');
+                        }
+                    });
+                });
+            });
+            
+            // Close mega menu when clicking on close button
+            megaMenuCloseButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const megaMenu = this.closest('.mega-menu');
+                    megaMenu.classList.remove('mega-menu-active');
+                });
+            });
+            
+            // Close mega menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.has-mega-menu')) {
+                    document.querySelectorAll('.mega-menu').forEach(menu => {
+                        menu.classList.remove('mega-menu-active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
